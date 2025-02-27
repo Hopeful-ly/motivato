@@ -1,6 +1,6 @@
 # Motivato Environment Variables
 
-This document describes the environment variables required for the Everythin.ir application.
+This document describes the environment variables required for the Motivato application.
 
 ## Authentication Variables
 

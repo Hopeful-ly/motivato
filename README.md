@@ -1,36 +1,28 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Motivato Environment Variables
 
-## Getting Started
+This document describes the environment variables required for the Everythin.ir application.
 
-First, run the development server:
+## Authentication Variables
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- `AUTH_SECRET`: Secret key used by Auth.js for encryption and session management
+- `AUTH_DISCORD_ID`: Discord OAuth application ID for authentication
+- `AUTH_DISCORD_SECRET`: Discord OAuth secret for authentication
+- `AUTH_GOOGLE_ID`: Google OAuth client ID for authentication
+- `AUTH_GOOGLE_SECRET`: Google OAuth client secret for authentication
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## API Keys
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- `OPENAI_API_KEY`: OpenAI API key for AI functionality
+- `CRON_API_KEY`: API key for scheduled tasks and cron jobs
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Web Push Notification Variables
 
-## Learn More
+- `NEXT_PUBLIC_VAPID_PUBLIC_KEY`: Public VAPID key for web push notifications
+- `VAPID_PRIVATE_KEY`: Private VAPID key for web push notifications
+- `VAPID_EMAIL`: Contact email for VAPID web push notifications
 
-To learn more about Next.js, take a look at the following resources:
+## Database Configuration
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- `SUPABASE_PASSWORD`: Password for Supabase database access
+- `DATABASE_URL`: Connection string for PostgreSQL database via connection pooling
+- `DIRECT_URL`: Direct connection string to PostgreSQL database (used for migrations)

@@ -333,10 +333,10 @@ export default function TermsAndConditions() {
               <br />
               Email:{" "}
               <a
-                href="mailto:privacy@motivato.com"
+                href="mailto:privacy@everythin.ir"
                 className="font-medium text-primary underline underline-offset-4"
               >
-                privacy@motivato.com
+                privacy@everythin.ir
               </a>
             </p>
 

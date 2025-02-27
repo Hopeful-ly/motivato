@@ -1,9 +1,8 @@
 "use server";
-import { generateText, streamText } from "ai";
+import { generateText } from "ai";
 import { openai } from "@ai-sdk/openai";
 import { prisma } from "@/db/prisma";
 import { auth } from "@/auth";
-import { NextResponse } from "next/server";
 import { MoodRequest, moodRequestSchema } from "../auth/schema";
 
 export async function getMotivation(request: MoodRequest) {

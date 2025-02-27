@@ -20,7 +20,7 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Form } from "@/components/ui/form";
-import { useCallback, useMemo, useState } from "react";
+import { useCallback, useState } from "react";
 import { z } from "zod";
 import { setupPersonalization } from "@/lib/actions/personalization";
 import { Loader2 } from "lucide-react";
@@ -29,7 +29,6 @@ const {
   StepperProvider,
   StepperControls,
   StepperNavigation,
-  StepperPanel,
   StepperStep,
   StepperTitle,
 } = defineStepper(
@@ -78,14 +77,15 @@ export default function Steps() {
     setLoading(true);
     await setupPersonalization(data);
   };
-  const partFields = [
-    ["firstname", "lastname", "about"],
-    ["bigDream", "inspiration"],
-    ["obstacles", "fears", "regrets"],
-    ["tosAgreement", "privacyAgreement", "redPill"],
-  ] as const;
+
   const weCanGoNext = useCallback(
     async (step: string) => {
+      const partFields = [
+        ["firstname", "lastname", "about"],
+        ["bigDream", "inspiration"],
+        ["obstacles", "fears", "regrets"],
+        ["tosAgreement", "privacyAgreement", "redPill"],
+      ] as const;
       const stepIndex = parseInt(step) - 1;
       if (stepIndex < 0 || stepIndex >= partFields.length) return false;
 
@@ -100,7 +100,7 @@ export default function Steps() {
       <CardHeader>
         <CardTitle>Get things right.</CardTitle>
         <CardDescription>
-          Let's not beat around the bush, be concrete.
+          Let&apos;s not beat around the bush, be concrete.
         </CardDescription>
       </CardHeader>
       <CardContent>
@@ -143,10 +143,10 @@ export default function Steps() {
                   <ScrollArea>
                     <div className="px-4 py-4">
                       {methods.switch({
-                        "1": (step) => <Personal />,
-                        "2": (step) => <Motivation />,
-                        "3": (step) => <Demotivation />,
-                        "4": (step) => <MoreStuff />,
+                        "1": () => <Personal />,
+                        "2": () => <Motivation />,
+                        "3": () => <Demotivation />,
+                        "4": () => <MoreStuff />,
                       })}
                     </div>
                   </ScrollArea>

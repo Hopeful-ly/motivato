@@ -1,5 +1,4 @@
 "use client";
-import { cn } from "@/lib/utils";
 import { useState } from "react";
 
 export default function TermsAndConditions() {
@@ -21,7 +20,7 @@ export default function TermsAndConditions() {
               width: Math.min(20, clickedTimes * 2),
             }}
           >
-            {"'nt"}
+            &apos;nt
           </span>{" "}
           joking
         </div>
@@ -50,9 +49,9 @@ export default function TermsAndConditions() {
               2. Description of Service
             </h3>
             <p className="leading-7 [&:not(:first-child)]:mt-6">
-              Motivato is a platform designed to help improve users' mood
+              Motivato is a platform designed to help improve users&apos; mood
               through motivational content, including but not limited to
-              motivational quotes, poems, and speeches tailored to users'
+              motivational quotes, poems, and speeches tailored to users&apos;
               emotional states.
             </p>
 
@@ -87,9 +86,9 @@ export default function TermsAndConditions() {
             </p>
 
             <blockquote className="mt-6 border-l-2 pl-6 italic">
-              "Motivato is designed to uplift and inspire. Any use of our
+              &quot;Motivato is designed to uplift and inspire. Any use of our
               platform that undermines this mission or harms others will not be
-              tolerated."
+              tolerated.&quot;
             </blockquote>
 
             <h3 className="mt-8 scroll-m-20 text-2xl font-semibold tracking-tight">
@@ -106,9 +105,9 @@ export default function TermsAndConditions() {
               7. Disclaimer of Warranties
             </h3>
             <p className="leading-7 [&:not(:first-child)]:mt-6">
-              Our service is provided "as is" without warranties of any kind,
-              either express or implied. We do not warrant that the service will
-              be uninterrupted or error-free.
+              Our service is provided &quot;as is&quot; without warranties of
+              any kind, either express or implied. We do not warrant that the
+              service will be uninterrupted or error-free.
             </p>
 
             <h3 className="mt-8 scroll-m-20 text-2xl font-semibold tracking-tight">
@@ -305,7 +304,7 @@ export default function TermsAndConditions() {
             </p>
 
             <h3 className="mt-8 scroll-m-20 text-2xl font-semibold tracking-tight">
-              7. Children's Privacy
+              7. Children&apos;s Privacy
             </h3>
             <p className="leading-7 [&:not(:first-child)]:mt-6">
               Our service is not intended for individuals under the age of 13.
@@ -321,7 +320,7 @@ export default function TermsAndConditions() {
             <p className="leading-7 [&:not(:first-child)]:mt-6">
               We may update our Privacy Policy from time to time. We will notify
               you of any changes by posting the new Privacy Policy on this page
-              and updating the "Last Updated" date.
+              and updating the &quot;Last Updated&quot; date.
             </p>
 
             <h3 className="mt-8 scroll-m-20 text-2xl font-semibold tracking-tight">

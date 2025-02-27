@@ -25,7 +25,7 @@ export function LoginForm({
     if (method === "passkey") {
       try {
         await signIn("passkey");
-      } catch (error) {
+      } catch {
         toast.error("Failed to login, please try another method.");
         setLoading(null);
       }

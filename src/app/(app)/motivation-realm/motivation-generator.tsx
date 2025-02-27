@@ -1,18 +1,10 @@
 "use client";
 
 import { useCallback, useState } from "react";
-import { useChat } from "@ai-sdk/react";
 import { MoodSelector } from "./mood-selector";
 import { Button } from "../../../components/ui/button";
 import { Textarea } from "../../../components/ui/textarea";
-import { Card, CardContent } from "../../../components/ui/card";
 import { Loader2 } from "lucide-react";
-import {
-  Tabs,
-  TabsContent,
-  TabsList,
-  TabsTrigger,
-} from "../../../components/ui/tabs";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { AnimatePresence, motion } from "motion/react";
@@ -24,9 +16,9 @@ import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 interface MotivationGeneratorProps {
   userId: string;
 }
-const stepFields = [["mood"], ["note"], ["type"]];
+const stepFields = [["mood"], ["note"], ["type"]] as const;
 
-export function MotivationGenerator({ userId }: MotivationGeneratorProps) {
+export function MotivationGenerator({}: MotivationGeneratorProps) {
   const [step, setStep] = useState<0 | 1 | 2 | 3>(0);
   const form = useForm({
     resolver: zodResolver(moodRequestSchema),
@@ -39,7 +31,7 @@ export function MotivationGenerator({ userId }: MotivationGeneratorProps) {
   const [generation, setGeneration] = useState<boolean | string>(false);
   const canGoNext = useCallback(
     async (step: number) => {
-      return await form.trigger(stepFields[step] as any);
+      return await form.trigger(stepFields[step]);
     },
     [form]
   );
@@ -85,7 +77,7 @@ export function MotivationGenerator({ userId }: MotivationGeneratorProps) {
             exit={{ opacity: 0, y: -10, transition: { duration: 0.3 } }}
           >
             <h3 className="text-lg font-medium mb-2">
-              What's on your mind? (optional)
+              What&apos;s on your mind? (optional)
             </h3>
             <Textarea
               placeholder="Share some thoughts about how you're feeling..."
@@ -129,7 +121,9 @@ export function MotivationGenerator({ userId }: MotivationGeneratorProps) {
             <ToggleGroup
               type="single"
               value={form.watch("type")}
-              onValueChange={(value) => form.setValue("type", value as any)}
+              onValueChange={(value) =>
+                form.setValue("type", value as "poem" | "speech")
+              }
               className="w-full mt-4"
             >
               <ToggleGroupItem variant="outline" className="w-1/2" value="poem">

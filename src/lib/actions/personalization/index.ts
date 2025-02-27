@@ -1,5 +1,4 @@
 "use server";
-import { PersonalizationProfile } from "@prisma/client";
 import { PersonalizationSchema, personalizationSchema } from "./schema";
 import { prisma } from "@/db/prisma";
 import { auth } from "@/auth";

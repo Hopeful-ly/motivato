@@ -1,12 +1,6 @@
 "use client";
 
-import {
-  ChevronRight,
-  Clock,
-  Settings2,
-  Sparkles,
-  type LucideIcon,
-} from "lucide-react";
+import { ChevronRight, Sparkles, type LucideIcon } from "lucide-react";
 
 import {
   Collapsible,

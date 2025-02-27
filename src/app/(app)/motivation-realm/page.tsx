@@ -1,6 +1,5 @@
 import { auth } from "@/auth";
 import { redirect } from "next/navigation";
-import { MoodSelector } from "@/app/(app)/motivation-realm/mood-selector";
 import { MotivationGenerator } from "@/app/(app)/motivation-realm/motivation-generator";
 
 export default async function Home() {
